@@ -21,7 +21,8 @@ EventDispatcher.listen 'my.first.event', (event) ->
 
 EventDispatcher.listen 'my.first.event', (event) ->
     console.log "Hello again #{event.title} #{event.name}!"
-    event
+    off # if you want to stop event propagation - do not
+        # return event and propagation will stop.
 
 EventDispatcher.listen 'my.first.event', (event) ->
     console.log "The end"
@@ -33,4 +34,4 @@ EventDispatcher.listen 'my.first.event', (event) ->
 event = EventDispatcher.dispatch 'my.first.event', event
 
 # check if event propagation was complete
-console.log "Success? " + if event? then event.success else no
+console.log "Success? " + if event then event.success else no

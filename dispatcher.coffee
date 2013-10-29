@@ -12,8 +12,8 @@ class EventDispatcher
         return event if not @listeners[event_name]?
 
         for callback in @listeners[event_name]
+            break if not event
             event = callback event
-            break if not event?
 
         event
 
