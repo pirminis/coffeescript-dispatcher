@@ -1,5 +1,5 @@
 # load dispatcher
-{EventDispatcher} = require '../dispatcher.coffee'
+{EventDispatcher} = require '../../dispatcher.coffee'
 
 # define your event
 class PersonEvent
